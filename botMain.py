@@ -37,28 +37,39 @@ def droprate():
         return "N"
 
 # Cards in each rarity
-card_pool = {
-    'N': ['SideCharacter (N)', 'SideCharacter2 (N)'],
+card_poolMatsuri = {
+    'N': [
+        {'name': 'Quocadile (N)', 'image': 'http://bit.ly/40cIaPY'},  
+        {'name': 'Edwina (N)', 'image' : 'https://bit.ly/4dW61a1' }  
+    ],
     'R': ['PyroStark (R)', 'Rukironii (R)', 'Branakuya (R)'],
     'SR': ['Lensu (SR)', 'Munozaki (SR)'],
     'SSR': ['TomKuna (SSR)', 'Shinrago (SSR)', 'GrimDrago (SSR)'],
     'UR': ['YachiTuan (UR)'],
-    'LR': ['Diddy Force (LR)']
+    'LR': ['Diddy Force (LR)', 'FireDuo(LR)']
 }
 
 
 #getting the rarity to choose which pool
 def card_drop():
     cardRarity = droprate()
-    card = random.choice(card_pool[cardRarity])
+    card = random.choice(card_poolMatsuri[cardRarity])
     return cardRarity, card
 
 #drop command! hope this works
 @bot.command()
-@commands.cooldown(1, 1800, commands.BucketType.user)  # Cooldown set to 1800 seconds (30 minutes)
+#@commands.cooldown(1, 1800, commands.BucketType.user)  # Cooldown set to 1800 seconds (30 minutes)
 async def drop(ctx):
     cardRarity, card = card_drop()  # Get the card and its rarity
-    await ctx.send(f'You got a {cardRarity} card: {card} {ctx.author.mention}!')
+
+    # Send the message about the card
+    await ctx.send(f'You got a {cardRarity} card: {card["name"]} {ctx.author.mention}!')
+
+    # Check if the card has an image and display it as an embed(in frame)
+    if card['image']:
+        embed = discord.Embed()  
+        embed.set_image(url=card['image'])  
+        await ctx.send(embed=embed) 
 
 #wait! you just drop
 @drop.error
