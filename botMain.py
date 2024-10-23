@@ -20,23 +20,26 @@ async def hello(ctx):
 async def myhelp(ctx):
     await ctx.send(f"so you need some help working this bot ehh {ctx.author.mention}!")
     await ctx.send(f"Type `j!` as prefixed")
-    await ctx.send(f"`myhelp`, `drop`, `inventory`, `cooldowns`, `rarity`,")
+    await ctx.send(f"`myhelp`, `drop`, `inventory`, `cooldowns`, `rarity`, `view`")
 
 #Function to determine card droprate !!
+import random
 def droprate():
-    random_number = random.randint(1, 10000)
-
-    if random_number > 9899:  # 0.1% for LR
+    random_number = random.randint(1, 100000)  # Extend the range to 100,000
+    
+    if random_number == 1:  # 0.001% for secret rarity
+        return "Secret"
+    elif random_number <= 1001:  # 1% for LR (from 2 to 1001)
         return "LR"
-    elif random_number > 9798:  # 1.01% for UR
+    elif random_number <= 4001:  # 3% for UR (from 1002 to 4001)
         return "UR"
-    elif random_number > 8998:  # 8% for SSR
+    elif random_number <= 12001:  # 8% for SSR (from 4002 to 12001)
         return "SSR"
-    elif random_number > 7998:  # 10% for SR
+    elif random_number <= 22001:  # 10% for SR (from 12002 to 22001)
         return "SR"
-    elif random_number > 4998:  # 30% for R
+    elif random_number <= 52001:  # 30% for R (from 22002 to 52001)
         return "R"
-    else:  # 50% for N
+    else:  # 50% for N (from 52002 to 100000)
         return "N"
 
 # Cards in each rarity
@@ -128,6 +131,29 @@ async def inventory(ctx):
 
     await ctx.send(displayInventory)
     await ctx.send(embed=embed)
+
+#showing rarity of card
+@bot.command()
+async def rarity(ctx):
+    # Create an embed object
+    embed = discord.Embed(
+        title="Card Rarity",
+        description="**someone here didn't play Dokkan, don't worry, I've got you covered!**",
+        color=discord.Color.blue()  # You can choose any color here
+    )
+
+    # Add fields for each rarity
+    embed.add_field(name="N (Normal)", value="50% droprate", inline=False)
+    embed.add_field(name="R (Rare)", value="30% droprate", inline=False)
+    embed.add_field(name="SR (Super Rare)", value="10% droprate", inline=False)
+    embed.add_field(name="SSR (Super Super Rare)", value="8% droprate", inline=False)
+    embed.add_field(name="UR (Ultra Rare)", value="3% droprate", inline=False)
+    embed.add_field(name="LR (Legendary Rare)", value="1% droprate", inline=False)
+    embed.add_field(name="??? (Secret)", value="0.001% droprate", inline=False)
+
+
+    await ctx.send(embed=embed)
+
 
 # load token from file and start botn ***KEEP AT BOTTOM***
 with open("token.txt") as file:
