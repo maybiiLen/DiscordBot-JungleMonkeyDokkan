@@ -39,14 +39,35 @@ def droprate():
 # Cards in each rarity
 card_poolMatsuri = {
     'N': [
-        {'name': 'Quocadile (N)', 'image': 'http://bit.ly/40cIaPY'},  
-        {'name': 'Edwina (N)', 'image' : 'https://bit.ly/4dW61a1' }  
+        {'name': 'NPC (N)', 'image': 'theImage'},
+        {'name': 'NPC2 (N)', 'image': 'theImage'}  
     ],
-    'R': ['PyroStark (R)', 'Rukironii (R)', 'Branakuya (R)'],
-    'SR': ['Lensu (SR)', 'Munozaki (SR)'],
-    'SSR': ['TomKuna (SSR)', 'Shinrago (SSR)', 'GrimDrago (SSR)'],
-    'UR': ['YachiTuan (UR)'],
-    'LR': ['Diddy Force (LR)', 'FireDuo(LR)']
+    'R': [
+        {'name': 'PyroStark (R)', 'image': 'theImage'},
+        {'name': 'Edku (R)', 'image': 'theImage'},
+        {'name': 'Rukironii (R)', 'image': 'theImage'},
+        {'name': 'Branakuya (R)', 'image': 'theImage'},
+        {'name': 'Munozaki (SR)', 'image': 'theImage'},
+        {'name': 'Tasugaya (SR)', 'image': 'theImage'}
+    ],
+    'SR': [
+        {'name': 'IchiLen (SR)', 'image': 'theImage'},
+        {'name': 'PyroStark (SR)', 'image': 'theImage'},
+        {'name': 'Tosuke (SR)', 'image': 'theImage'},
+        {'name': 'GrimDrago (SSR)', 'image': 'theImage'}
+    ],
+    'SSR': [
+        {'name': 'Lentsu (SSR)', 'image': 'theImage'},
+        {'name': 'Shinrago (SSR)', 'image': 'theImage'}
+    ],
+    'UR': [
+        {'name': 'YachiTuan (UR)', 'image': 'theImage'},
+        {'name': 'TomKuna (SSR)', 'image': 'theImage'}
+    ],
+    'LR': [
+        {'name': 'Diddy Force (LR)', 'image': 'theImage'},
+        {'name': 'FireDuo (LR)', 'image': 'theImage'}
+    ]
 }
 
 
