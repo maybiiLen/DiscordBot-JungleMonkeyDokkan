@@ -3,45 +3,19 @@ from discord.ext import commands
 import random
 import asyncio
 from collections import defaultdict
-import json
-import os 
 
 bot = commands.Bot(command_prefix = "j!", intents = discord.Intents.all())
 
-#delcare inventory
-inventory_file = 'savedInventory.json'
-
 userInventory = defaultdict(lambda: defaultdict(int))
 
-#loading and saving inventory into json file
-def load_inventory():
-    global userInventory
-    if os.path.exists(inventory_file):
-        if os.path.getsize(inventory_file) > 0:  # Check if the file is not empty
-            with open(inventory_file, 'r') as file:
-                try:
-                    data = json.load(file)
-                    # Convert the loaded data back into a defaultdict
-                    userInventory = defaultdict(lambda: defaultdict(int), {k: defaultdict(int, v) for k, v in data.items()})
-                    print("Inventory loaded successfully.")
-                except json.JSONDecodeError:
-                    print("Error loading JSON data.")
-        else:
-            print("Inventory file is empty. Starting with an empty inventory.")
-    else:
-        print("No inventory file found. Starting with an empty inventory.")
-
-
-def save_inventory():
-    with open(inventory_file, 'w') as file:
-        json.dump({k: dict(v) for v in userInventory.items()}, file, indent=4)
-
-#starting the bot
 @bot.event
 async def on_ready():
     print("bot ready")
+<<<<<<< HEAD
     load_inventory()
 
+=======
+>>>>>>> parent of a74773c (setting inventory and pushing it)
 
 @bot.command()
 async def hello(ctx):
@@ -76,7 +50,7 @@ def droprate():
 # Cards in each rarity
 card_poolMatsuri = {
     'Normal': [
-        {'name': 'NPC (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298473330592186418/NPC_N_1.png?ex=671a59c6&is=67190846&hm=662153b1a255eb94e67859a7e9c6f27b4d7efb05dbce6104b801db617c613210&=&format=webp&quality=lossless'},
+        {'name': 'NPC (N)', 'image': 'https://images-ext-1.discordapp.net/external/WyNVhHpogjMEI9BDUHYoqdqcwQlxDB2dVcUtUHB9xpQ/https/media.tenor.com/ryPE1xzKn70AAAPo/rizz-face.mp4'},
         {'name': 'NPC2 (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298475633331933257/NPC2N.png?ex=6719b32b&is=671861ab&hm=f72ebc3d4b911b60f483548b6789fc9d1e8953d7f5eb9231629c95ad79a72650&=&format=webp&quality=lossless'}  
     ],
     'Rare': [
@@ -115,13 +89,16 @@ def card_drop():
 
 #drop command! hope this works
 @bot.command()
-@commands.cooldown(1, 1800, commands.BucketType.user)  # Cooldown set to 1800 seconds (30 minutes)
+#@commands.cooldown(1, 1800, commands.BucketType.user)  # Cooldown set to 1800 seconds (30 minutes)
 async def drop(ctx):
     cardRarity, card = card_drop()  # Get the card and its rarity
 
     userInventory[ctx.author.id][card['name']] += 1
+<<<<<<< HEAD
     
     save_inventory()
+=======
+>>>>>>> parent of a74773c (setting inventory and pushing it)
 
     # Send the message about the card
     await ctx.send(f'You just drop a {cardRarity} Card: {card["name"]} {ctx.author.mention}!')
@@ -170,7 +147,7 @@ async def inventory(ctx):
         await ctx.send(f'damn {ctx.author.mention}, you aint got nun in here')
         return 
     else:
-        embed = discord.Embed(color = discord.Color.dark_blue())
+        embed = discord.Embed(color = discord.Color.red())
 
 
         displayInventory = f"{ctx.author.mention}'s Inventory:\n"
