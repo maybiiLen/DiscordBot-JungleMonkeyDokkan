@@ -32,7 +32,7 @@ def droprate():
     elif random_number <= 1001:  # 1% for LR (from 2 to 1001)
         return "Legendary Rare"
     elif random_number <= 4001:  # 3% for UR (from 1002 to 4001)
-        return "Ultra Rare" 
+        return "Ultra Rare"
     elif random_number <= 12001:  # 8% for SSR (from 4002 to 12001)
         return "Super Super Rare"
     elif random_number <= 22001:  # 10% for SR (from 12002 to 22001)
@@ -45,7 +45,7 @@ def droprate():
 # Cards in each rarity
 card_poolMatsuri = {
     'Normal': [
-        {'name': 'NPC (N)', 'image': 'https://images-ext-1.discordapp.net/external/WyNVhHpogjMEI9BDUHYoqdqcwQlxDB2dVcUtUHB9xpQ/https/media.tenor.com/ryPE1xzKn70AAAPo/rizz-face.mp4'},
+        {'name': 'NPC (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298473330592186418/NPC_N_1.png?ex=6719b106&is=67185f86&hm=582e828418f2c1f6d470fa235bdc35f6b65f931a8e2344242b8f5febc8830460&=&format=webp&quality=lossless'},
         {'name': 'NPC2 (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298475633331933257/NPC2N.png?ex=6719b32b&is=671861ab&hm=f72ebc3d4b911b60f483548b6789fc9d1e8953d7f5eb9231629c95ad79a72650&=&format=webp&quality=lossless'}  
     ],
     'Rare': [
@@ -84,7 +84,7 @@ def card_drop():
 
 #drop command! hope this works
 @bot.command()
-#@commands.cooldown(1, 1800, commands.BucketType.user)  # Cooldown set to 1800 seconds (30 minutes)
+@commands.cooldown(1, 1800, commands.BucketType.user)  # Cooldown set to 1800 seconds (30 minutes)
 async def drop(ctx):
     cardRarity, card = card_drop()  # Get the card and its rarity
 
