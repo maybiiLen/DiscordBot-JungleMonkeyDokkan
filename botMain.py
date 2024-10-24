@@ -42,10 +42,6 @@ async def on_ready():
     print("bot ready")
     load_inventory()
 
-#saving file on disconnect
-@bot.event
-async def on_disconnect():
-    save_inventory()
 
 @bot.command()
 async def hello(ctx):
@@ -124,7 +120,7 @@ async def drop(ctx):
     cardRarity, card = card_drop()  # Get the card and its rarity
 
     userInventory[ctx.author.id][card['name']] += 1
-
+    
     save_inventory()
 
     # Send the message about the card
@@ -149,10 +145,12 @@ async def drop(ctx):
         embed.set_image(url=card['image'])  
         await ctx.send(embed=embed) 
 
+        
 #wait! you just drop
 @drop.error
 async def drop_error(ctx, error):
     if isinstance(error,commands.CommandOnCooldown):
+        print("cooldown is active")
         await ctx.send(f'chill out bro, im on cooldown. gimme {round(error.retry_after / 60)} minutes.')
 
 #Checking cooldown of bot
