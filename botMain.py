@@ -56,6 +56,16 @@ def bot_shutdown_signal(signal_received, frame):
 signal.signal(signal.SIGINT, bot_shutdown_signal)
 signal.signal(signal.SIGTERM, bot_shutdown_signal)
 
+#reset inventory command
+@bot.command()
+async def fullreset(ctx):
+    if ctx.author.guild_permissions.administrator:
+        userInventory.clear()
+        await writeToFiles()
+        await ctx.send(f"Inventory has been reset")
+    else:
+        await ctx.send(f"ayyy, u dont got perms lil bro")
+
 #############################################################################
 
 
@@ -117,8 +127,8 @@ card_poolMatsuri = {
         {'name': 'TomKuna (SSR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298499485864824882/TomkunaUR.png?ex=6719c962&is=671877e2&hm=3ecfc0c9949027f2ad99d8d6360a86966cbf68046cb359326ef32c671eb291ff&=&format=webp&quality=lossless'}
     ],
     'Legendary Rare': [
-        {'name': 'Diddy Force (LR)', 'image': 'theImage'},
-        {'name': 'FireDuo (LR)', 'image': 'theImage'}
+        {'name': 'Diddy Force (LR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1299265626744950804/DiddyForceLR_2.png?ex=671c92e8&is=671b4168&hm=254223a79a0deabc518fde99f8c7314c098ac627f3c4bfcaf45ecdc3bd0e7bb7&=&format=webp&quality=lossless'},
+        {'name': 'FireDuo (LR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1299253759402311701/FireDuoLR.png?ex=671c87db&is=671b365b&hm=acef3ffa6cda2ebf8e4c8224f07c34e89ba13a05ab9bcc62863f82e4ffa8e4b9&=&format=webp&quality=lossless'}
     ]
 }
 
