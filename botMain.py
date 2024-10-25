@@ -194,14 +194,14 @@ async def inventory(ctx):
         await ctx.send(f'damn {ctx.author.mention}, you aint got nun in here')
         return 
     else:
-        embed = discord.Embed(color = discord.Color.red())
+        embed = discord.Embed(title="Player's Inventory:\n",color = discord.Color.dark_purple())
 
-
-        displayInventory = f"{ctx.author.mention}'s Inventory:\n"
+        displayInventory = ""
         for card_name, count in user_inventory.items():
-            embed.add_field(name = card_name, value = f"{count}x",inline=False)
+            displayInventory += f"{card_name} - {count}x\n"
 
-    await ctx.send(displayInventory)
+        embed.add_field(name="Cards", value = displayInventory, inline = False)
+
     await ctx.send(embed=embed)
 
 #showing rarity of card
