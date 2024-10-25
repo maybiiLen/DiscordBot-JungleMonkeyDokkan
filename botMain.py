@@ -3,14 +3,61 @@ from discord.ext import commands
 import random
 import asyncio
 from collections import defaultdict
+import json
+import aiofiles
+import signal 
+
 
 bot = commands.Bot(command_prefix = "j!", intents = discord.Intents.all())
 
 userInventory = defaultdict(lambda: defaultdict(int))
 
+#############################################################################
+
 @bot.event
 async def on_ready():
     print("bot ready")
+    try: 
+        async with aiofiles.open('playerInventory.json', 'r') as file:
+            data = await file.read()
+            if data:
+                loaded_inventory = json.loads(data)
+                for user_id, cards in loaded_inventory.items():
+                    for card_name, count in cards.items():
+                        userInventory[int(user_id)][card_name] = count
+                print("Inventory loaded successfully")
+    except FileNotFoundError:
+        print("oh so your new huh?, we're gonna be starting with a fresh inventory")
+
+    bot.loop.create_task(save_inventory())
+
+
+async def writeToFiles():
+        try:
+            normal_dict = {k: dict(v) for k, v in userInventory.items()}
+            async with aiofiles.open('playerInventory.json', 'w') as file:
+                await file.write(json.dumps(normal_dict))
+            print("inventory saved!!")
+        except Exception as e:
+            print(f"error saving inventory: {e}")
+
+async def save_inventory():
+    while True:
+        await writeToFiles()
+        await asyncio.sleep(3600)
+
+
+#bot shutdown command 
+
+def bot_shutdown_signal(signal_received, frame):
+    bot.loop.create_task(writeToFiles())
+    bot.loop.create_task(bot.close())
+
+signal.signal(signal.SIGINT, bot_shutdown_signal)
+signal.signal(signal.SIGTERM, bot_shutdown_signal)
+
+#############################################################################
+
 
 @bot.command()
 async def hello(ctx):
@@ -167,6 +214,7 @@ async def rarity(ctx):
 
 
     await ctx.send(embed=embed)
+
 
 
 # load token from file and start botn ***KEEP AT BOTTOM***
