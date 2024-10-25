@@ -11,11 +11,6 @@ userInventory = defaultdict(lambda: defaultdict(int))
 @bot.event
 async def on_ready():
     print("bot ready")
-<<<<<<< HEAD
-    load_inventory()
-
-=======
->>>>>>> parent of a74773c (setting inventory and pushing it)
 
 @bot.command()
 async def hello(ctx):
@@ -94,11 +89,6 @@ async def drop(ctx):
     cardRarity, card = card_drop()  # Get the card and its rarity
 
     userInventory[ctx.author.id][card['name']] += 1
-<<<<<<< HEAD
-    
-    save_inventory()
-=======
->>>>>>> parent of a74773c (setting inventory and pushing it)
 
     # Send the message about the card
     await ctx.send(f'You just drop a {cardRarity} Card: {card["name"]} {ctx.author.mention}!')
