@@ -117,7 +117,7 @@ card_poolMatsuri = {
         {'name': 'IchiLen (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298484787081646091/IchilenSR.png?ex=6719bbb1&is=67186a31&hm=865d66c3f367d91062326dd135218dfd255ca4943dbaf80206074cd30829a1ee&=&format=webp&quality=lossless'},
         {'name': 'PyroStark (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298486247190302784/PyrostarkSR.png?ex=6719bd0e&is=67186b8e&hm=037986c3ad28284b2c46ae1f07422d13f58ebce9a50c3e3a361eee8d810dafa9&=&format=webp&quality=lossless'},
         {'name': 'Tomsuke (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298487049162330163/TomsukeSR.png?ex=6719bdcd&is=67186c4d&hm=8844e2d667d26121c302ba7660cbac9fccd439ad18c94aef7f6d1460cd0a05d6&=&format=webp&quality=lossless'},
-        {'name': 'GrimDrago (SSR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298487983942533150/GrimdragoSR.png?ex=6719beac&is=67186d2c&hm=8c5b127904d6ac94c9082f048c1b7a957bbab9332d68faf268811c02523a45b2&=&format=webp&quality=lossless'}
+        {'name': 'GrimDrago (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298487983942533150/GrimdragoSR.png?ex=6719beac&is=67186d2c&hm=8c5b127904d6ac94c9082f048c1b7a957bbab9332d68faf268811c02523a45b2&=&format=webp&quality=lossless'}
     ],
     'Super Super Rare': [
         {'name': 'Lentsu (SSR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298491074179764234/LentsuSSR.png?ex=6719c18c&is=6718700c&hm=2a57dfdf38eb57df6caf35fd499bee6650f3e2366d48cfe4e30a269dfe72716d&=&format=webp&quality=lossless'},
