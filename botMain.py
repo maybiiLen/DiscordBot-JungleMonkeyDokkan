@@ -80,7 +80,6 @@ async def myhelp(ctx):
     await ctx.send(f"`myhelp`, `drop`, `inventory`, `cooldown`, `rarity`, `view`")
 
 #Function to determine card droprate !!
-import random
 def droprate():
     random_number = random.randint(1, 100000)  # Extend the range to 100,000
     
@@ -90,14 +89,16 @@ def droprate():
         return "Legendary Rare"
     elif random_number <= 4001:  # 3% for UR (from 1002 to 4001)
         return "Ultra Rare"
-    elif random_number <= 12001:  # 8% for SSR (from 4002 to 12001)
+    elif random_number <= 10001:  # 6% for SSR (from 4002 to 10001)
         return "Super Super Rare"
-    elif random_number <= 22001:  # 10% for SR (from 12002 to 22001)
+    elif random_number <= 20001:  # 10% for SR (from 10002 to 20001)
         return "Super Rare"
-    elif random_number <= 52001:  # 30% for R (from 22002 to 52001)
+    elif random_number <= 50001:  # 30% for R (from 20002 to 50001)
         return "Rare"
-    else:  # 50% for N (from 52002 to 100000)
+    else:  # 50% for N (from 50002 to 100000)
         return "Normal"
+
+
 
 # Cards in each rarity
 card_poolMatsuri = {
@@ -218,7 +219,7 @@ async def rarity(ctx):
     embed.add_field(name="N (Normal)", value="50% droprate", inline=False)
     embed.add_field(name="R (Rare)", value="30% droprate", inline=False)
     embed.add_field(name="SR (Super Rare)", value="10% droprate", inline=False)
-    embed.add_field(name="SSR (Super Super Rare)", value="8% droprate", inline=False)
+    embed.add_field(name="SSR (Super Super Rare)", value="6% droprate", inline=False)
     embed.add_field(name="UR (Ultra Rare)", value="3% droprate", inline=False)
     embed.add_field(name="LR (Legendary Rare)", value="1% droprate", inline=False)
 
