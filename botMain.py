@@ -110,8 +110,8 @@ card_poolMatsuri = {
         {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298478583123021834/EdkuR.png?ex=6719b5ea&is=6718646a&hm=db00227e28e8b1c813dd365fbd92c4f52a87837717e7af7baddc9c228b29f84f&=&format=webp&quality=lossless'},
         {'name': 'Rukironii (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298479345823912057/RukironiiR.png?ex=6719b6a0&is=67186520&hm=d8db71182428ac2b54bed7c34f6dd8caa115d8c7fd7ef80af5d37c36c36a6546&=&format=webp&quality=lossless'},
         {'name': 'Branakuya (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481165979619348/BranakuyaR.png?ex=6719b852&is=671866d2&hm=333d917bf25a2ca1dfa542c1f6a12b7806d3236394edcb8759d47bdeec6157b4&=&format=webp&quality=lossless'},
-        {'name': 'Munozaki (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481885164470303/MunozakiR.png?ex=6719b8fe&is=6718677e&hm=27bbb7cd857de83772ca96cf52f1564972c3a291f18c58ace649a0349b504105&=&format=webp&quality=lossless'},
-        {'name': 'Tasugaya (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298482840945823844/TasugayaR.png?ex=6719b9e1&is=67186861&hm=77a2a35441e0cd5d36312b55371e8b3de5556e120c791c88a43e2ea18eed3b8e&=&format=webp&quality=lossless'}
+        {'name': 'Munozaki (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481885164470303/MunozakiR.png?ex=6719b8fe&is=6718677e&hm=27bbb7cd857de83772ca96cf52f1564972c3a291f18c58ace649a0349b504105&=&format=webp&quality=lossless'},
+        {'name': 'Tasugaya (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298482840945823844/TasugayaR.png?ex=6719b9e1&is=67186861&hm=77a2a35441e0cd5d36312b55371e8b3de5556e120c791c88a43e2ea18eed3b8e&=&format=webp&quality=lossless'}
     ],
     'Super Rare': [
         {'name': 'IchiLen (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298484787081646091/IchilenSR.png?ex=6719bbb1&is=67186a31&hm=865d66c3f367d91062326dd135218dfd255ca4943dbaf80206074cd30829a1ee&=&format=webp&quality=lossless'},
@@ -125,7 +125,7 @@ card_poolMatsuri = {
     ],
     'Ultra Rare': [
         {'name': 'YachiTuan (UR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298496837690331147/YachituanUR.png?ex=6719c6eb&is=6718756b&hm=61a2c727deb998401d865b7b7c334d5971d987ce1ca957b2d2b47ff009d25eb8&=&format=webp&quality=lossless'},
-        {'name': 'TomKuna (SSR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298499485864824882/TomkunaUR.png?ex=6719c962&is=671877e2&hm=3ecfc0c9949027f2ad99d8d6360a86966cbf68046cb359326ef32c671eb291ff&=&format=webp&quality=lossless'}
+        {'name': 'TomKuna (UR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298499485864824882/TomkunaUR.png?ex=6719c962&is=671877e2&hm=3ecfc0c9949027f2ad99d8d6360a86966cbf68046cb359326ef32c671eb291ff&=&format=webp&quality=lossless'}
     ],
     'Legendary Rare': [
         {'name': 'Diddy Force (LR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1299265626744950804/DiddyForceLR_2.png?ex=671c92e8&is=671b4168&hm=254223a79a0deabc518fde99f8c7314c098ac627f3c4bfcaf45ecdc3bd0e7bb7&=&format=webp&quality=lossless'},
