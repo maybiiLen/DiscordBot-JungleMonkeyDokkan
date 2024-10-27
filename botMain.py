@@ -106,7 +106,7 @@ card_poolMatsuri = {
         {'name': 'NPC2 (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298475633331933257/NPC2N.png?ex=6719b32b&is=671861ab&hm=f72ebc3d4b911b60f483548b6789fc9d1e8953d7f5eb9231629c95ad79a72650&=&format=webp&quality=lossless'}  
     ],
     'Rare': [
-        {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298478583123021834/EdkuR.png?ex=6719b5ea&is=6718646a&hm=db00227e28e8b1c813dd365fbd92c4f52a87837717e7af7baddc9c228b29f84f&=&format=webp&quality=lossless'},
+        {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299886837531279411/edku_2024_ed.png?ex=671ed574&is=671d83f4&hm=23475022e106283a7579c462fd245402eb0035d91e2000023d3cfb1c04cfd776&=&format=webp&quality=lossless'},
         {'name': 'Rukironii (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298479345823912057/RukironiiR.png?ex=6719b6a0&is=67186520&hm=d8db71182428ac2b54bed7c34f6dd8caa115d8c7fd7ef80af5d37c36c36a6546&=&format=webp&quality=lossless'},
         {'name': 'Branakuya (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481165979619348/BranakuyaR.png?ex=6719b852&is=671866d2&hm=333d917bf25a2ca1dfa542c1f6a12b7806d3236394edcb8759d47bdeec6157b4&=&format=webp&quality=lossless'},
         {'name': 'Munozaki (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481885164470303/MunozakiR.png?ex=6719b8fe&is=6718677e&hm=27bbb7cd857de83772ca96cf52f1564972c3a291f18c58ace649a0349b504105&=&format=webp&quality=lossless'},
