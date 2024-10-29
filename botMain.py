@@ -108,7 +108,7 @@ card_poolMatsuri = {
         {'name': 'NPC2 (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298475633331933257/NPC2N.png?ex=6719b32b&is=671861ab&hm=f72ebc3d4b911b60f483548b6789fc9d1e8953d7f5eb9231629c95ad79a72650&=&format=webp&quality=lossless'}  
     ],
     'Rare': [
-        {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298478583123021834/EdkuR.png?ex=6719b5ea&is=6718646a&hm=db00227e28e8b1c813dd365fbd92c4f52a87837717e7af7baddc9c228b29f84f&=&format=webp&quality=lossless'},
+        {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299886837531279411/edku_2024_ed.png?ex=6720cfb4&is=671f7e34&hm=b904cb5646c5c84dc3f6f24e1076d57dd9bf13530d60d4d2d1af61b6169bdd1e&=&format=webp&quality=lossless'},
         {'name': 'Rukironii (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298479345823912057/RukironiiR.png?ex=6719b6a0&is=67186520&hm=d8db71182428ac2b54bed7c34f6dd8caa115d8c7fd7ef80af5d37c36c36a6546&=&format=webp&quality=lossless'},
         {'name': 'Branakuya (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481165979619348/BranakuyaR.png?ex=6719b852&is=671866d2&hm=333d917bf25a2ca1dfa542c1f6a12b7806d3236394edcb8759d47bdeec6157b4&=&format=webp&quality=lossless'},
         {'name': 'Munozaki (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481885164470303/MunozakiR.png?ex=6719b8fe&is=6718677e&hm=27bbb7cd857de83772ca96cf52f1564972c3a291f18c58ace649a0349b504105&=&format=webp&quality=lossless'},
@@ -116,7 +116,7 @@ card_poolMatsuri = {
     ],
     'Super Rare': [
         {'name': 'IchiLen (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298484787081646091/IchilenSR.png?ex=6719bbb1&is=67186a31&hm=865d66c3f367d91062326dd135218dfd255ca4943dbaf80206074cd30829a1ee&=&format=webp&quality=lossless'},
-        {'name': 'PyroStark (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298486247190302784/PyrostarkSR.png?ex=6719bd0e&is=67186b8e&hm=037986c3ad28284b2c46ae1f07422d13f58ebce9a50c3e3a361eee8d810dafa9&=&format=webp&quality=lossless'},
+        {'name': 'PyroStark (SR)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299893392393633802/PyroStarrk_2023_ed_1.png?ex=6720d5cf&is=671f844f&hm=f08c6e651e4fbbc0d5d7224cf9094f7b2b5125bf3cc8b848030a08303d1ff14d&=&format=webp&quality=lossless'},
         {'name': 'Tomsuke (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298487049162330163/TomsukeSR.png?ex=6719bdcd&is=67186c4d&hm=8844e2d667d26121c302ba7660cbac9fccd439ad18c94aef7f6d1460cd0a05d6&=&format=webp&quality=lossless'},
         {'name': 'GrimDrago (SR)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299890763253022732/Dokkan_Template_PSD-SS.png?ex=671f81dc&is=671e305c&hm=38fb3e586405e56d8d499d8038aff6ef5e45c50543b30003d784a2cc49d7b843&=&format=webp&quality=lossless'}
     ],
