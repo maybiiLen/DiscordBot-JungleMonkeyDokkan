@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix = "j!", intents = discord.Intents.all())
 
 userInventory = defaultdict(lambda: defaultdict(int))
 
-#############################################################################
+userCooldowns = {}
 
 @bot.event
 async def on_ready():
@@ -30,16 +30,18 @@ async def on_ready():
         print("oh so your new huh?, we're gonna be starting with a fresh inventory")
 
     bot.loop.create_task(save_inventory())
+    bot.loop.create_task(cooldown_alert())
 
 
 async def writeToFiles():
-        try:
-            normal_dict = {k: dict(v) for k, v in userInventory.items()}
-            async with aiofiles.open('playerInventory.json', 'w') as file:
-                await file.write(json.dumps(normal_dict))
-            print("inventory saved!!")
-        except Exception as e:
-            print(f"error saving inventory: {e}")
+    try:
+        normal_dict = {k: dict(v) for k, v in userInventory.items()}
+        async with aiofiles.open('playerInventory.json', 'w') as file:
+            await file.write(json.dumps(normal_dict, indent=4))  # Added indent for readability
+        print("Inventory saved!!")
+    except Exception as e:
+        print(f"error saving inventory: {e}")
+
 
 async def save_inventory():
     while True:
@@ -66,7 +68,6 @@ async def fullreset(ctx):
     else:
         await ctx.send(f"ayyy, u dont got perms lil bro")
 
-#############################################################################
 
 
 @bot.command()
@@ -107,7 +108,7 @@ card_poolMatsuri = {
         {'name': 'NPC2 (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298475633331933257/NPC2N.png?ex=6719b32b&is=671861ab&hm=f72ebc3d4b911b60f483548b6789fc9d1e8953d7f5eb9231629c95ad79a72650&=&format=webp&quality=lossless'}  
     ],
     'Rare': [
-        {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299886837531279411/edku_2024_ed.png?ex=671ed574&is=671d83f4&hm=23475022e106283a7579c462fd245402eb0035d91e2000023d3cfb1c04cfd776&=&format=webp&quality=lossless'},
+        {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299886837531279411/edku_2024_ed.png?ex=6720cfb4&is=671f7e34&hm=b904cb5646c5c84dc3f6f24e1076d57dd9bf13530d60d4d2d1af61b6169bdd1e&=&format=webp&quality=lossless'},
         {'name': 'Rukironii (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298479345823912057/RukironiiR.png?ex=6719b6a0&is=67186520&hm=d8db71182428ac2b54bed7c34f6dd8caa115d8c7fd7ef80af5d37c36c36a6546&=&format=webp&quality=lossless'},
         {'name': 'Branakuya (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481165979619348/BranakuyaR.png?ex=6719b852&is=671866d2&hm=333d917bf25a2ca1dfa542c1f6a12b7806d3236394edcb8759d47bdeec6157b4&=&format=webp&quality=lossless'},
         {'name': 'Munozaki (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481885164470303/MunozakiR.png?ex=6719b8fe&is=6718677e&hm=27bbb7cd857de83772ca96cf52f1564972c3a291f18c58ace649a0349b504105&=&format=webp&quality=lossless'},
@@ -115,16 +116,16 @@ card_poolMatsuri = {
     ],
     'Super Rare': [
         {'name': 'IchiLen (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298484787081646091/IchilenSR.png?ex=6719bbb1&is=67186a31&hm=865d66c3f367d91062326dd135218dfd255ca4943dbaf80206074cd30829a1ee&=&format=webp&quality=lossless'},
-        {'name': 'PyroStark (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298486247190302784/PyrostarkSR.png?ex=6719bd0e&is=67186b8e&hm=037986c3ad28284b2c46ae1f07422d13f58ebce9a50c3e3a361eee8d810dafa9&=&format=webp&quality=lossless'},
+        {'name': 'PyroStark (SR)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299893392393633802/PyroStarrk_2023_ed_1.png?ex=6720d5cf&is=671f844f&hm=f08c6e651e4fbbc0d5d7224cf9094f7b2b5125bf3cc8b848030a08303d1ff14d&=&format=webp&quality=lossless'},
         {'name': 'Tomsuke (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298487049162330163/TomsukeSR.png?ex=6719bdcd&is=67186c4d&hm=8844e2d667d26121c302ba7660cbac9fccd439ad18c94aef7f6d1460cd0a05d6&=&format=webp&quality=lossless'},
-        {'name': 'GrimDrago (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298487983942533150/GrimdragoSR.png?ex=6719beac&is=67186d2c&hm=8c5b127904d6ac94c9082f048c1b7a957bbab9332d68faf268811c02523a45b2&=&format=webp&quality=lossless'}
+        {'name': 'GrimDrago (SR)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299890763253022732/Dokkan_Template_PSD-SS.png?ex=671f81dc&is=671e305c&hm=38fb3e586405e56d8d499d8038aff6ef5e45c50543b30003d784a2cc49d7b843&=&format=webp&quality=lossless'}
     ],
     'Super Super Rare': [
         {'name': 'Lentsu (SSR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298491074179764234/LentsuSSR.png?ex=6719c18c&is=6718700c&hm=2a57dfdf38eb57df6caf35fd499bee6650f3e2366d48cfe4e30a269dfe72716d&=&format=webp&quality=lossless'},
         {'name': 'Shinrago (SSR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298493745137975336/ShinragowSSR.png?ex=6719c409&is=67187289&hm=8b6cfe16a4dd86fa83be595273c771e1d5fcbe6361e94d3a7c47995496455008&=&format=webp&quality=lossless'}
     ],
     'Ultra Rare': [
-        {'name': 'YachiTuan (UR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298496837690331147/YachituanUR.png?ex=6719c6eb&is=6718756b&hm=61a2c727deb998401d865b7b7c334d5971d987ce1ca957b2d2b47ff009d25eb8&=&format=webp&quality=lossless'},
+        {'name': 'YachiTuan (UR)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299999236347269161/tuanchiru_2023_ed_1.png?ex=671fe6e2&is=671e9562&hm=32c079102aaf5979d2fb455186bf6f8e291eca711cc96f30f913dac6456a9d27&=&format=webp&quality=lossless'},
         {'name': 'TomKuna (UR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298499485864824882/TomkunaUR.png?ex=6719c962&is=671877e2&hm=3ecfc0c9949027f2ad99d8d6360a86966cbf68046cb359326ef32c671eb291ff&=&format=webp&quality=lossless'}
     ],
     'Legendary Rare': [
@@ -148,6 +149,9 @@ async def drop(ctx):
 
     userInventory[ctx.author.id][card['name']] += 1
 
+    cooldown_end = asyncio.get_event_loop().time() + 1800 
+    userCooldowns[ctx.author.id] = (cooldown_end, ctx.channel)
+
     # Send the message about the card
     await ctx.send(f'You just drop a {cardRarity} Card: {card["name"]} {ctx.author.mention}!')
 
@@ -170,6 +174,20 @@ async def drop(ctx):
         embed.set_image(url=card['image'])  
         await ctx.send(embed=embed) 
 
+#cheecking for cooldown alert
+async def cooldown_alert():
+    await bot.wait_until_ready()
+    while not bot.is_closed():
+        current_time = asyncio.get_event_loop().time()
+
+        for user_id, (cooldown_end, channel) in list(userCooldowns.items()):
+            if current_time >= cooldown_end:
+                user = await bot.fetch_user(user_id)
+                await channel.send(f"{user.mention}, ayyy start dropping lil bro")
+
+                del userCooldowns[user_id]
+
+        await asyncio.sleep(60)
         
 #wait! you just drop
 @drop.error
