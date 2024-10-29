@@ -1,90 +1,117 @@
 {
-    "747619574949871686": {
-        "Edku (R)": 1,
-        "NPC2 (N)": 5,
-        "NPC (N)": 2,
-        "Branakuya (R)": 1
-    },
-    "338075666064998401": {
-        "NPC2 (N)": 2,
-        "Branakuya (R)": 2,
-        "Munozaki (R)": 1,
-        "NPC (N)": 2,
-        "IchiLen (SR)": 1,
-        "Tasugaya (R)": 1,
-        "YachiTuan (UR)": 1
-    },
-    "341354110551064576": {
-        "NPC (N)": 4,
-        "NPC2 (N)": 7,
-        "Munozaki (R)": 3,
-        "Edku (R)": 1,
-        "PyroStark (SR)": 1
-    },
-    "311280422153748480": {
-        "NPC2 (N)": 5,
-        "Edku (R)": 1,
-        "Rukironii (R)": 1,
-        "Shinrago (SSR)": 1,
-        "NPC (N)": 1,
-        "GrimDrago (SR)": 1
-    },
-    "385959162519224331": {
-        "Edku (R)": 1,
-        "NPC2 (N)": 1
-    },
-    "289953236264288261": {
-        "NPC2 (N)": 2,
-        "Edku (R)": 1,
-        "Tasugaya (R)": 1,
-        "NPC (N)": 1,
-        "Lentsu (SSR)": 1
-    },
-    "490564939929354241": {
-        "NPC (N)": 1,
-        "Rukironii (R)": 1,
-        "NPC2 (N)": 1
-    },
-    "697353120455458846": {
-        "Lentsu (SSR)": 2,
-        "NPC2 (N)": 2,
-        "Rukironii (R)": 1,
-        "Branakuya (R)": 1,
-        "NPC (N)": 2,
-        "IchiLen (SR)": 1,
-        "Munozaki (R)": 1
-    },
-    "432768532456144918": {
-        "Tomsuke (SR)": 2,
-        "Edku (R)": 1,
-        "NPC2 (N)": 3,
-        "NPC (N)": 2
-    },
     "369232294524878852": {
-        "NPC (N)": 4,
-        "Tasugaya (R)": 1,
-        "NPC2 (N)": 3,
-        "Branakuya (R)": 2,
+        "NPC (N)": 10,
+        "Tasugaya (R)": 3,
+        "NPC2 (N)": 8,
+        "Branakuya (R)": 4,
         "Lentsu (SSR)": 2,
         "Tomsuke (SR)": 1,
         "YachiTuan (UR)": 1,
         "Munozaki (R)": 2,
-        "Edku (R)": 1
+        "Edku (R)": 2
     },
     "287660426626465792": {
-        "NPC (N)": 3,
-        "NPC2 (N)": 3,
+        "Shinrago (SSR)": 1,
+        "NPC (N)": 6,
+        "NPC2 (N)": 5,
         "Rukironii (R)": 2,
-        "GrimDrago (SR)": 1
+        "GrimDrago (SR)": 1,
+        "TomKuna (UR)": 1,
+        "YachiTuan (UR)": 1
+    },
+    "747619574949871686": {
+        "Edku (R)": 1,
+        "NPC2 (N)": 6,
+        "NPC (N)": 6,
+        "Branakuya (R)": 1,
+        "Lentsu (SSR)": 1,
+        "Shinrago (SSR)": 1,
+        "YachiTuan (UR)": 1,
+        "Diddy Force (LR)": 1
+    },
+    "338075666064998401": {
+        "NPC2 (N)": 7,
+        "Branakuya (R)": 3,
+        "Munozaki (R)": 1,
+        "NPC (N)": 5,
+        "IchiLen (SR)": 1,
+        "Tasugaya (R)": 1,
+        "YachiTuan (UR)": 1,
+        "PyroStark (SR)": 1,
+        "Rukironii (R)": 1,
+        "TomKuna (UR)": 1,
+        "Tomsuke (SR)": 1
+    },
+    "341354110551064576": {
+        "NPC (N)": 8,
+        "NPC2 (N)": 8,
+        "Munozaki (R)": 3,
+        "Edku (R)": 1,
+        "PyroStark (SR)": 1,
+        "Tasugaya (R)": 3,
+        "Branakuya (R)": 2,
+        "Tomsuke (SR)": 1,
+        "Shinrago (SSR)": 1
+    },
+    "311280422153748480": {
+        "NPC2 (N)": 6,
+        "Edku (R)": 3,
+        "Rukironii (R)": 2,
+        "Shinrago (SSR)": 1,
+        "NPC (N)": 3,
+        "GrimDrago (SR)": 1,
+        "IchiLen (SR)": 1,
+        "Munozaki (R)": 2
+    },
+    "385959162519224331": {
+        "Edku (R)": 1,
+        "NPC2 (N)": 2,
+        "Munozaki (R)": 2
+    },
+    "289953236264288261": {
+        "NPC2 (N)": 2,
+        "Edku (R)": 1,
+        "Tasugaya (R)": 2,
+        "NPC (N)": 1,
+        "Lentsu (SSR)": 2,
+        "Rukironii (R)": 1,
+        "Munozaki (R)": 1
+    },
+    "490564939929354241": {
+        "NPC (N)": 2,
+        "Rukironii (R)": 2,
+        "NPC2 (N)": 2,
+        "GrimDrago (SR)": 1,
+        "Tasugaya (R)": 1
+    },
+    "697353120455458846": {
+        "Lentsu (SSR)": 2,
+        "NPC2 (N)": 4,
+        "Rukironii (R)": 1,
+        "Branakuya (R)": 1,
+        "NPC (N)": 5,
+        "IchiLen (SR)": 1,
+        "Munozaki (R)": 3
+    },
+    "432768532456144918": {
+        "Tomsuke (SR)": 2,
+        "Edku (R)": 2,
+        "NPC2 (N)": 6,
+        "NPC (N)": 5,
+        "PyroStark (SR)": 1,
+        "Branakuya (R)": 1,
+        "Lentsu (SSR)": 1
     },
     "445445998437859349": {
-        "NPC (N)": 5,
+        "NPC (N)": 7,
         "YachiTuan (UR)": 1,
         "Lentsu (SSR)": 2,
-        "Shinrago (SSR)": 1,
-        "NPC2 (N)": 3,
+        "Shinrago (SSR)": 2,
+        "NPC2 (N)": 4,
         "IchiLen (SR)": 1,
-        "Munozaki (R)": 1
+        "Munozaki (R)": 1,
+        "Tasugaya (R)": 1,
+        "Branakuya (R)": 1
     },
     "1023024350720426004": {
         "PyroStark (SR)": 1,
@@ -96,18 +123,28 @@
     },
     "577676843713429514": {
         "Edku (R)": 1,
-        "NPC2 (N)": 1,
-        "Rukironii (R)": 1
+        "NPC2 (N)": 3,
+        "Rukironii (R)": 2,
+        "YachiTuan (UR)": 1,
+        "Munozaki (R)": 2,
+        "Branakuya (R)": 2,
+        "NPC (N)": 2,
+        "GrimDrago (SR)": 1,
+        "IchiLen (SR)": 1
     },
     "381954488417648640": {
-        "NPC2 (N)": 3,
-        "NPC (N)": 2,
+        "NPC2 (N)": 7,
+        "NPC (N)": 3,
         "IchiLen (SR)": 1,
         "Munozaki (R)": 1,
-        "Shinrago (SSR)": 1
+        "Shinrago (SSR)": 2,
+        "Tasugaya (R)": 1,
+        "Branakuya (R)": 1
     },
     "488447454862376992": {
-        "Rukironii (R)": 1
+        "Rukironii (R)": 1,
+        "NPC (N)": 1,
+        "NPC2 (N)": 1
     },
     "344291431395098634": {
         "Rukironii (R)": 1

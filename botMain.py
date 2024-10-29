@@ -8,7 +8,7 @@ import aiofiles
 import signal 
 
 
-bot = commands.Bot(command_prefix = "j!", intents = discord.Intents.all())
+bot = commands.Bot(command_prefix = ["j!", "j"], intents = discord.Intents.all())
 
 userInventory = defaultdict(lambda: defaultdict(int))
 
@@ -108,7 +108,7 @@ card_poolMatsuri = {
         {'name': 'NPC2 (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298475633331933257/NPC2N.png?ex=6719b32b&is=671861ab&hm=f72ebc3d4b911b60f483548b6789fc9d1e8953d7f5eb9231629c95ad79a72650&=&format=webp&quality=lossless'}  
     ],
     'Rare': [
-        {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299886837531279411/edku_2024_ed.png?ex=6720cfb4&is=671f7e34&hm=b904cb5646c5c84dc3f6f24e1076d57dd9bf13530d60d4d2d1af61b6169bdd1e&=&format=webp&quality=lossless'},
+        {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1300641039308034138/edku_2024_ed_1.png?ex=672193dc&is=6720425c&hm=e2dce11f68f305c4ef564093fb1bb4adfcc82fd06cab4bcba24068bb48467d39&=&format=webp&quality=lossless'},
         {'name': 'Rukironii (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298479345823912057/RukironiiR.png?ex=6719b6a0&is=67186520&hm=d8db71182428ac2b54bed7c34f6dd8caa115d8c7fd7ef80af5d37c36c36a6546&=&format=webp&quality=lossless'},
         {'name': 'Branakuya (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481165979619348/BranakuyaR.png?ex=6719b852&is=671866d2&hm=333d917bf25a2ca1dfa542c1f6a12b7806d3236394edcb8759d47bdeec6157b4&=&format=webp&quality=lossless'},
         {'name': 'Munozaki (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481885164470303/MunozakiR.png?ex=6719b8fe&is=6718677e&hm=27bbb7cd857de83772ca96cf52f1564972c3a291f18c58ace649a0349b504105&=&format=webp&quality=lossless'},
@@ -142,7 +142,7 @@ def card_drop():
     return cardRarity, card
 
 #drop command! hope this works
-@bot.command()
+@bot.command(aliases=["d"])
 @commands.cooldown(1, 1800, commands.BucketType.user)  # Cooldown set to 1800 seconds (30 minutes)
 async def drop(ctx):
     cardRarity, card = card_drop()  # Get the card and its rarity
@@ -197,7 +197,7 @@ async def drop_error(ctx, error):
         await ctx.send(f'chill out bro, im on cooldown. gimme {round(error.retry_after / 60)} minutes.')
 
 #Checking cooldown of bot
-@bot.command()
+@bot.command(aliases=["cd"])
 async def cooldown(ctx):
     if drop.is_on_cooldown(ctx):
         await ctx.send(f'just busted a load, {round(drop.get_cooldown_retry_after(ctx) / 60)} minutes.')
@@ -205,7 +205,7 @@ async def cooldown(ctx):
         await ctx.send(f'start dropping buddy.')
 
 #Inventory tracking
-@bot.command()
+@bot.command(aliases=["i"])
 async def inventory(ctx):
     user_inventory = userInventory[ctx.author.id]
 
@@ -215,8 +215,15 @@ async def inventory(ctx):
     else:
         embed = discord.Embed(title="Player's Inventory:\n",color = discord.Color.dark_purple())
 
+        #showwing rank of rarity
+        rarity_rank = {
+            'LR': 1, 'UR': 2, 'SSR': 3, 'SR': 4, 'R': 5, 'N': 6
+        }
+
+        sort_inventory = sorted(user_inventory.items(), key=lambda item: (rarity_rank.get(item[0].split()[-1].strip("()"), 7), item[0]))
+
         displayInventory = ""
-        for card_name, count in user_inventory.items():
+        for card_name, count in sort_inventory:
             displayInventory += f"{card_name} - {count}x\n"
 
         embed.add_field(name="Cards", value = displayInventory, inline = False)
@@ -224,7 +231,7 @@ async def inventory(ctx):
     await ctx.send(embed=embed)
 
 #showing rarity of card
-@bot.command()
+@bot.command(aliases=["rar"])
 async def rarity(ctx):
     # Create an embed object
     embed = discord.Embed(
@@ -243,7 +250,6 @@ async def rarity(ctx):
 
 
     await ctx.send(embed=embed)
-
 
 
 # load token from file and start botn ***KEEP AT BOTTOM***
