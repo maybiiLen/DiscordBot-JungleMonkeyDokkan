@@ -14,6 +14,16 @@ userInventory = defaultdict(lambda: defaultdict(int))
 
 userCooldowns = {}
 
+# Global dictionary for colors based on full rarity names
+rarity_colors = {
+    'Legendary Rare': discord.Color.gold(),
+    'Ultra Rare': discord.Color.red(),
+    'Super Super Rare': discord.Color.purple(),
+    'Super Rare': discord.Color.blue(),
+    'Rare': discord.Color.pink(),
+    'Normal': discord.Color.green()
+}
+
 @bot.event
 async def on_ready():
     print("bot ready")
@@ -155,18 +165,7 @@ async def drop(ctx):
     # Send the message about the card
     await ctx.send(f'You just drop a {cardRarity} Card: {card["name"]} {ctx.author.mention}!')
 
-    if cardRarity == 'Legendary Rare':
-        color=discord.Color.gold()
-    elif cardRarity == 'Ultra Rare':
-        color=discord.Color.red()
-    elif cardRarity == 'Super Super Rare':
-        color=discord.Color.pink()
-    elif cardRarity == 'Super Rare':
-        color=discord.Color.blue()
-    elif cardRarity == 'Rare':
-        color=discord.Color.purple()
-    elif cardRarity == 'Normal':
-        color=discord.Color.green()
+    color = rarity_colors.get(cardRarity, discord.Color.default())
 
     # Check if the card has an image and display it as an embed(in frame)
     if card['image']:
@@ -229,6 +228,30 @@ async def inventory(ctx):
         embed.add_field(name="Cards", value = displayInventory, inline = False)
 
     await ctx.send(embed=embed)
+
+#viewing card image
+@bot.command(aliases=["v"])
+async def view(ctx, * , card_name: str):
+    user_inventory = userInventory[ctx.author.id]
+    card_found = False
+
+    for name, count in user_inventory.items():
+        if name.split(" ")[0].lower() == card_name.lower():
+            for rarity, card_list in card_poolMatsuri.items():
+                for card in card_list:
+                    if card["name"] == name:
+                        cardColor = rarity_colors.get(rarity, discord.Color.default())
+                        embed = discord.Embed(title=f"{card['name']}", color=cardColor)
+                        embed.set_image(url=card["image"])
+                        await ctx.send(embed=embed)
+                        card_found = True
+                        break
+                if card_found:
+                    break
+            break
+    if not card_found:
+        await ctx.send(f"ayyo lil bro, you aint got '{card_name}' in your inventory xD")
+
 
 #showing rarity of card
 @bot.command(aliases=["rar"])
