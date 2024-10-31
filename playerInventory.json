@@ -1,84 +1,92 @@
 {
     "697353120455458846": {
+        "Branakuya (R)": 1,
         "Tasugaya (R)": 1,
         "Lentsu (SSR)": 2,
-        "NPC2 (N)": 5,
+        "NPC2 (N)": 8,
         "Rukironii (R)": 2,
-        "Branakuya (R)": 1,
-        "NPC (N)": 7,
+        "NPC (N)": 9,
         "IchiLen (SR)": 1,
         "Munozaki (R)": 3,
         "TomKuna (UR)": 1,
         "Tomsuke (SR)": 1,
-        "PyroStark (SR)": 1
+        "PyroStark (SR)": 1,
+        "YachiTuan (UR)": 1
     },
     "369232294524878852": {
-        "NPC (N)": 12,
-        "Tasugaya (R)": 5,
-        "NPC2 (N)": 10,
-        "Branakuya (R)": 5,
-        "Lentsu (SSR)": 2,
+        "NPC (N)": 14,
+        "Tasugaya (R)": 8,
+        "NPC2 (N)": 13,
+        "Branakuya (R)": 6,
+        "Lentsu (SSR)": 3,
         "Tomsuke (SR)": 1,
         "YachiTuan (UR)": 1,
-        "Munozaki (R)": 2,
-        "Edku (R)": 2
+        "Munozaki (R)": 3,
+        "Edku (R)": 3,
+        "IchiLen (SR)": 2,
+        "Rukironii (R)": 2,
+        "GrimDrago (SR)": 1
     },
     "287660426626465792": {
         "Shinrago (SSR)": 1,
-        "NPC (N)": 8,
+        "NPC (N)": 10,
         "NPC2 (N)": 5,
         "Rukironii (R)": 2,
-        "GrimDrago (SR)": 1,
+        "GrimDrago (SR)": 2,
         "TomKuna (UR)": 1,
-        "YachiTuan (UR)": 1,
+        "YachiTuan (UR)": 2,
         "Munozaki (R)": 1,
         "Branakuya (R)": 1,
-        "Tasugaya (R)": 1
+        "Tasugaya (R)": 2,
+        "Edku (R)": 1
     },
     "747619574949871686": {
         "Edku (R)": 1,
-        "NPC2 (N)": 7,
-        "NPC (N)": 7,
-        "Branakuya (R)": 1,
+        "NPC2 (N)": 10,
+        "NPC (N)": 12,
+        "Branakuya (R)": 2,
         "Lentsu (SSR)": 1,
-        "Shinrago (SSR)": 1,
+        "Shinrago (SSR)": 2,
         "YachiTuan (UR)": 1,
-        "Diddy Force (LR)": 1,
-        "Tomsuke (SR)": 1
+        "Diddy Force (LR)": 2,
+        "Tomsuke (SR)": 1,
+        "Rukironii (R)": 1,
+        "Tasugaya (R)": 1
     },
     "338075666064998401": {
-        "NPC2 (N)": 7,
+        "NPC2 (N)": 10,
         "Branakuya (R)": 4,
         "Munozaki (R)": 1,
         "NPC (N)": 7,
-        "IchiLen (SR)": 1,
+        "IchiLen (SR)": 2,
         "Tasugaya (R)": 1,
         "YachiTuan (UR)": 1,
         "PyroStark (SR)": 1,
-        "Rukironii (R)": 1,
+        "Rukironii (R)": 2,
         "TomKuna (UR)": 1,
         "Tomsuke (SR)": 1,
-        "Lentsu (SSR)": 1
+        "Lentsu (SSR)": 1,
+        "GrimDrago (SR)": 1
     },
     "341354110551064576": {
-        "NPC (N)": 8,
-        "NPC2 (N)": 8,
-        "Munozaki (R)": 3,
+        "NPC (N)": 11,
+        "NPC2 (N)": 10,
+        "Munozaki (R)": 4,
         "Edku (R)": 1,
-        "PyroStark (SR)": 1,
+        "PyroStark (SR)": 2,
         "Tasugaya (R)": 3,
         "Branakuya (R)": 2,
         "Tomsuke (SR)": 3,
         "Shinrago (SSR)": 1,
-        "Rukironii (R)": 1
+        "Rukironii (R)": 2
     },
     "311280422153748480": {
-        "NPC2 (N)": 9,
+        "NPC2 (N)": 11,
         "Edku (R)": 3,
         "Rukironii (R)": 2,
         "Shinrago (SSR)": 1,
-        "NPC (N)": 3,
-        "GrimDrago (SR)": 1,
+        "NPC (N)": 4,
+        "GrimDrago (SR)": 2,
         "IchiLen (SR)": 1,
         "Munozaki (R)": 2,
         "Tasugaya (R)": 1
@@ -86,7 +94,9 @@
     "385959162519224331": {
         "Edku (R)": 1,
         "NPC2 (N)": 2,
-        "Munozaki (R)": 2
+        "Munozaki (R)": 2,
+        "PyroStark (SR)": 1,
+        "NPC (N)": 1
     },
     "289953236264288261": {
         "NPC2 (N)": 2,
@@ -100,30 +110,35 @@
     "490564939929354241": {
         "NPC (N)": 3,
         "Rukironii (R)": 2,
-        "NPC2 (N)": 2,
+        "NPC2 (N)": 4,
         "GrimDrago (SR)": 1,
         "Tasugaya (R)": 1,
-        "Edku (R)": 1
+        "Edku (R)": 1,
+        "TomKuna (UR)": 1
     },
     "432768532456144918": {
         "Tomsuke (SR)": 2,
         "Edku (R)": 2,
         "NPC2 (N)": 7,
-        "NPC (N)": 5,
+        "NPC (N)": 6,
         "PyroStark (SR)": 1,
         "Branakuya (R)": 1,
-        "Lentsu (SSR)": 2
+        "Lentsu (SSR)": 2,
+        "Shinrago (SSR)": 1,
+        "FireDuo (LR)": 1
     },
     "445445998437859349": {
-        "NPC (N)": 7,
+        "NPC (N)": 10,
         "YachiTuan (UR)": 1,
         "Lentsu (SSR)": 2,
         "Shinrago (SSR)": 2,
-        "NPC2 (N)": 6,
+        "NPC2 (N)": 9,
         "IchiLen (SR)": 1,
-        "Munozaki (R)": 1,
-        "Tasugaya (R)": 1,
-        "Branakuya (R)": 1
+        "Munozaki (R)": 2,
+        "Tasugaya (R)": 2,
+        "Branakuya (R)": 1,
+        "Diddy Force (LR)": 1,
+        "TomKuna (UR)": 1
     },
     "1023024350720426004": {
         "PyroStark (SR)": 1,
@@ -135,20 +150,20 @@
     },
     "577676843713429514": {
         "Edku (R)": 1,
-        "NPC2 (N)": 5,
+        "NPC2 (N)": 8,
         "Rukironii (R)": 3,
-        "YachiTuan (UR)": 1,
-        "Munozaki (R)": 2,
+        "YachiTuan (UR)": 2,
+        "Munozaki (R)": 3,
         "Branakuya (R)": 2,
-        "NPC (N)": 2,
+        "NPC (N)": 4,
         "GrimDrago (SR)": 1,
         "IchiLen (SR)": 1,
         "Diddy Force (LR)": 1,
         "Tasugaya (R)": 1,
-        "Shinrago (SSR)": 1
+        "Shinrago (SSR)": 2
     },
     "381954488417648640": {
-        "NPC2 (N)": 7,
+        "NPC2 (N)": 8,
         "NPC (N)": 3,
         "IchiLen (SR)": 1,
         "Munozaki (R)": 1,
@@ -157,21 +172,28 @@
         "Branakuya (R)": 1
     },
     "488447454862376992": {
-        "Rukironii (R)": 1,
+        "Rukironii (R)": 2,
         "NPC (N)": 1,
-        "NPC2 (N)": 1
+        "NPC2 (N)": 1,
+        "Edku (R)": 1
     },
     "344291431395098634": {
         "Rukironii (R)": 1,
         "Tasugaya (R)": 2,
-        "NPC (N)": 2,
-        "NPC2 (N)": 1
+        "NPC (N)": 3,
+        "NPC2 (N)": 1,
+        "Edku (R)": 1,
+        "Munozaki (R)": 1
     },
     "316005484828033024": {
-        "NPC (N)": 2
+        "NPC (N)": 5,
+        "Rukironii (R)": 1
     },
     "468260642772484116": {
         "Munozaki (R)": 1,
         "Edku (R)": 1
+    },
+    "710319686923059221": {
+        "NPC2 (N)": 1
     }
 }
