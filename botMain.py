@@ -18,7 +18,7 @@ userCooldowns = {}
 rarity_colors = {
     'Legendary Rare': discord.Color.gold(),
     'Ultra Rare': discord.Color.red(),
-    'Super Super Rare': discord.Color.purple(),
+    'Super Super Rare': discord.Color.dark_purple(),
     'Super Rare': discord.Color.blue(),
     'Rare': discord.Color.pink(),
     'Normal': discord.Color.green()
