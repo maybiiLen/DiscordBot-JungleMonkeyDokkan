@@ -4,15 +4,34 @@ import random
 import asyncio
 from collections import defaultdict
 import json
-import aiofiles
-import signal 
-
+import signal
+import dotenv
+import os
+from pymongo import MongoClient
 
 bot = commands.Bot(command_prefix = ["j!", "j"], intents = discord.Intents.all())
 
-userInventory = defaultdict(lambda: defaultdict(int))
+
+# MongoDB setup
+mongo_uri = dotenv.get_key(dotenv.find_dotenv(), "MONGODB_URI")
+client = MongoClient(mongo_uri)
+db = client["dokkanbot"]
+inventory_collection = db["playerInventory"]
+
+def load_player_inventory(user_id):
+    result = inventory_collection.find_one({"user_id": user_id})
+    return result["inventory"] if result else {}
+
+def save_player_inventory(user_id, inventory):
+    inventory_collection.update_one(
+        {"user_id": user_id},
+        {"$set": {"inventory": inventory}},
+        upsert=True
+    )
 
 userCooldowns = {}
+
+discordToken = dotenv.get_key(dotenv.find_dotenv(), "DISCORD_TOKEN")
 
 # Global dictionary for colors based on full rarity names
 rarity_colors = {
@@ -24,56 +43,20 @@ rarity_colors = {
     'Normal': discord.Color.green()
 }
 
+
 @bot.event
 async def on_ready():
     print("bot ready")
-    try: 
-        async with aiofiles.open('playerInventory.json', 'r') as file:
-            data = await file.read()
-            if data:
-                loaded_inventory = json.loads(data)
-                for user_id, cards in loaded_inventory.items():
-                    for card_name, count in cards.items():
-                        userInventory[int(user_id)][card_name] = count
-                print("Inventory loaded successfully")
-    except FileNotFoundError:
-        print("oh so your new huh?, we're gonna be starting with a fresh inventory")
-
-    bot.loop.create_task(save_inventory())
     bot.loop.create_task(cooldown_alert())
 
 
-async def writeToFiles():
-    try:
-        normal_dict = {k: dict(v) for k, v in userInventory.items()}
-        async with aiofiles.open('playerInventory.json', 'w') as file:
-            await file.write(json.dumps(normal_dict, indent=4))  # Added indent for readability
-        print("Inventory saved!!")
-    except Exception as e:
-        print(f"error saving inventory: {e}")
-
-
-async def save_inventory():
-    while True:
-        await writeToFiles()
-        await asyncio.sleep(3600)
-
-
-#bot shutdown command 
-
-def bot_shutdown_signal(signal_received, frame):
-    bot.loop.create_task(writeToFiles())
-    bot.loop.create_task(bot.close())
-
-signal.signal(signal.SIGINT, bot_shutdown_signal)
-signal.signal(signal.SIGTERM, bot_shutdown_signal)
 
 #reset inventory command
+
 @bot.command()
 async def fullreset(ctx):
     if ctx.author.guild_permissions.administrator:
-        userInventory.clear()
-        await writeToFiles()
+        inventory_collection.delete_many({})
         await ctx.send(f"Inventory has been reset")
     else:
         await ctx.send(f"ayyy, u dont got perms lil bro")
@@ -160,26 +143,25 @@ def card_drop():
     return cardRarity, card
 
 #drop command! hope this works
+
 @bot.command(aliases=["d"])
-@commands.cooldown(1, 1800, commands.BucketType.user)  # Cooldown set to 1800 seconds (30 minutes)
+@commands.cooldown(1, 1800, commands.BucketType.user)
 async def drop(ctx):
-    cardRarity, card = card_drop()  # Get the card and its rarity
+    cardRarity, card = card_drop()
+    user_id = ctx.author.id
+    inventory = load_player_inventory(user_id)
+    inventory[card['name']] = inventory.get(card['name'], 0) + 1
+    save_player_inventory(user_id, inventory)
 
-    userInventory[ctx.author.id][card['name']] += 1
+    cooldown_end = asyncio.get_event_loop().time() + 1800
+    userCooldowns[user_id] = (cooldown_end, ctx.channel)
 
-    cooldown_end = asyncio.get_event_loop().time() + 1800 
-    userCooldowns[ctx.author.id] = (cooldown_end, ctx.channel)
-
-    # Send the message about the card
     await ctx.send(f'You just drop a {cardRarity} Card: {card["name"]} {ctx.author.mention}!')
-
     color = rarity_colors.get(cardRarity, discord.Color.default())
-
-    # Check if the card has an image and display it as an embed(in frame)
     if card['image']:
-        embed = discord.Embed(color=color)  
-        embed.set_image(url=card['image'])  
-        await ctx.send(embed=embed) 
+        embed = discord.Embed(color=color)
+        embed.set_image(url=card['image'])
+        await ctx.send(embed=embed)
 
 #cheecking for cooldown alert
 async def cooldown_alert():
@@ -212,37 +194,33 @@ async def cooldown(ctx):
         await ctx.send(f'start dropping buddy.')
 
 #Inventory tracking
+
 @bot.command(aliases=["i"])
 async def inventory(ctx):
-    user_inventory = userInventory[ctx.author.id]
-
+    user_id = ctx.author.id
+    user_inventory = load_player_inventory(user_id)
     if not user_inventory:
         await ctx.send(f'damn {ctx.author.mention}, you aint got nun in here')
-        return 
+        return
     else:
-        embed = discord.Embed(title="Player's Inventory:\n",color = discord.Color.dark_purple())
-
-        #showwing rank of rarity
+        embed = discord.Embed(title="Player's Inventory:\n", color=discord.Color.dark_purple())
         rarity_rank = {
             'LR': 1, 'UR': 2, 'SSR': 3, 'SR': 4, 'R': 5, 'N': 6
         }
-
         sort_inventory = sorted(user_inventory.items(), key=lambda item: (rarity_rank.get(item[0].split()[-1].strip("()"), 7), item[0]))
-
         displayInventory = ""
         for card_name, count in sort_inventory:
             displayInventory += f"{card_name} - {count}x\n"
-
-        embed.add_field(name="Cards", value = displayInventory, inline = False)
-
+        embed.add_field(name="Cards", value=displayInventory, inline=False)
     await ctx.send(embed=embed)
 
 #viewing card image
-@bot.command(aliases=["v"])
-async def view(ctx, * , card_name: str):
-    user_inventory = userInventory[ctx.author.id]
-    card_found = False
 
+@bot.command(aliases=["v"])
+async def view(ctx, *, card_name: str):
+    user_id = ctx.author.id
+    user_inventory = load_player_inventory(user_id)
+    card_found = False
     for name, count in user_inventory.items():
         if name.split(" ")[0].lower() == card_name.lower():
             for rarity, card_list in card_poolMatsuri.items():
@@ -283,8 +261,8 @@ async def rarity(ctx):
     await ctx.send(embed=embed)
 
 
-# load token from file and start botn ***KEEP AT BOTTOM***
-with open("token.txt") as file:
-    token = file.read()
 
+# Load Discord token from .env file
+dotenv.load_dotenv()
+token = os.getenv("DISCORD_TOKEN")
 bot.run(token)
