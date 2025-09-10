@@ -1,3 +1,5 @@
+from flask import Flask
+import threading
 import discord
 from discord.ext import commands
 import random
@@ -265,4 +267,17 @@ async def rarity(ctx):
 # Load Discord token from .env file
 dotenv.load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
+
+# Minimal Flask server for UptimeRobot
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_flask():
+    app.run(host="0.0.0.0", port=8080)
+
+threading.Thread(target=run_flask).start()
+
 bot.run(token)
