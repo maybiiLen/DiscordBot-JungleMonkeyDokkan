@@ -7,7 +7,6 @@ import json
 import aiofiles
 import signal 
 
-
 bot = commands.Bot(command_prefix = ["j!", "j"], intents = discord.Intents.all())
 
 userInventory = defaultdict(lambda: defaultdict(int))
