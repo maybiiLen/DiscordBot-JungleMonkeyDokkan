@@ -100,36 +100,28 @@ def droprate():
 card_poolMatsuri = {
     'Normal': [
         {'name': 'NPC (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298473330592186418/NPC_N_1.png?ex=6719b106&is=67185f86&hm=582e828418f2c1f6d470fa235bdc35f6b65f931a8e2344242b8f5febc8830460&=&format=webp&quality=lossless'},
-        {'name': 'NPC2 (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1301046116090904576/lawson.png?ex=6727aa5e&is=672658de&hm=6165ae0b60dfed824544205defe37863bc29bad4a80b422747c8bd62d13c69ed&=&format=webp&quality=lossless'},
-        {'name': 'NPC3 (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1299668782272348231/brandon_npc_2022_ed.png?ex=6727eda0&is=67269c20&hm=44884c45079e24b664676eb63c7e383165ea2439bf0ebfe04ad34f9539ca0ef4&=&format=webp&quality=lossless'}
+        {'name': 'NPC2 (N)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298475633331933257/NPC2N.png?ex=6719b32b&is=671861ab&hm=f72ebc3d4b911b60f483548b6789fc9d1e8953d7f5eb9231629c95ad79a72650&=&format=webp&quality=lossless'}  
     ],
     'Rare': [
         {'name': 'Edku (R)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1300641039308034138/edku_2024_ed_1.png?ex=672193dc&is=6720425c&hm=e2dce11f68f305c4ef564093fb1bb4adfcc82fd06cab4bcba24068bb48467d39&=&format=webp&quality=lossless'},
         {'name': 'Rukironii (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298479345823912057/RukironiiR.png?ex=6719b6a0&is=67186520&hm=d8db71182428ac2b54bed7c34f6dd8caa115d8c7fd7ef80af5d37c36c36a6546&=&format=webp&quality=lossless'},
         {'name': 'Branakuya (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481165979619348/BranakuyaR.png?ex=6719b852&is=671866d2&hm=333d917bf25a2ca1dfa542c1f6a12b7806d3236394edcb8759d47bdeec6157b4&=&format=webp&quality=lossless'},
         {'name': 'Munozaki (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298481885164470303/MunozakiR.png?ex=6719b8fe&is=6718677e&hm=27bbb7cd857de83772ca96cf52f1564972c3a291f18c58ace649a0349b504105&=&format=webp&quality=lossless'},
-        {'name': 'Tasugaya (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298482840945823844/TasugayaR.png?ex=6719b9e1&is=67186861&hm=77a2a35441e0cd5d36312b55371e8b3de5556e120c791c88a43e2ea18eed3b8e&=&format=webp&quality=lossless'},
-        {'name': 'PinkMenace (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1301052794664648748/PinkMenacesR.png?ex=6727b096&is=67265f16&hm=d135bb52b26df965291cc36c8dc9749d96dbcd10253b99e053b9220ed41655bd&=&format=webp&quality=lossless'}
+        {'name': 'Tasugaya (R)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298482840945823844/TasugayaR.png?ex=6719b9e1&is=67186861&hm=77a2a35441e0cd5d36312b55371e8b3de5556e120c791c88a43e2ea18eed3b8e&=&format=webp&quality=lossless'}
     ],
     'Super Rare': [
         {'name': 'IchiLen (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298484787081646091/IchilenSR.png?ex=6719bbb1&is=67186a31&hm=865d66c3f367d91062326dd135218dfd255ca4943dbaf80206074cd30829a1ee&=&format=webp&quality=lossless'},
         {'name': 'PyroStark (SR)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299893392393633802/PyroStarrk_2023_ed_1.png?ex=6720d5cf&is=671f844f&hm=f08c6e651e4fbbc0d5d7224cf9094f7b2b5125bf3cc8b848030a08303d1ff14d&=&format=webp&quality=lossless'},
         {'name': 'Tomsuke (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298487049162330163/TomsukeSR.png?ex=6719bdcd&is=67186c4d&hm=8844e2d667d26121c302ba7660cbac9fccd439ad18c94aef7f6d1460cd0a05d6&=&format=webp&quality=lossless'},
-        {'name': 'GrimDrago (SR)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299890763253022732/Dokkan_Template_PSD-SS.png?ex=671f81dc&is=671e305c&hm=38fb3e586405e56d8d499d8038aff6ef5e45c50543b30003d784a2cc49d7b843&=&format=webp&quality=lossless'},
-        {'name': 'Tojrago (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1299669697280741388/niji_npc_2022_ed.png?ex=6727ee7a&is=67269cfa&hm=f71cb8fb430113f6091b33813c34b1238d6a89d0ad50c957de7187839c2e5e6e&=&format=webp&quality=lossless'},
-        {'name': 'Chuseen (SR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1299669859344322603/tasuya_2022_ed.png?ex=6727eea1&is=67269d21&hm=358b392511256c58e5385d1def05e979737ce74673ab2403cf6f2b4fa5c08262&=&format=webp&quality=lossless'},
-        {'name': 'Celestial Spirits', 'image' : 'https://media.discordapp.net/attachments/1276598824579629089/1300005890711093330/lentsu_with_spirits_2024_ed_1.png?ex=6727d615&is=67268495&hm=222aa360d30d0de83eb92cc3d3f05beeb760aaf5b8aba2de209b6ec60a97acf1&=&format=webp&quality=lossless'}
+        {'name': 'GrimDrago (SR)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299890763253022732/Dokkan_Template_PSD-SS.png?ex=671f81dc&is=671e305c&hm=38fb3e586405e56d8d499d8038aff6ef5e45c50543b30003d784a2cc49d7b843&=&format=webp&quality=lossless'}
     ],
     'Super Super Rare': [
         {'name': 'Lentsu (SSR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298491074179764234/LentsuSSR.png?ex=6719c18c&is=6718700c&hm=2a57dfdf38eb57df6caf35fd499bee6650f3e2366d48cfe4e30a269dfe72716d&=&format=webp&quality=lossless'},
-        {'name': 'Shinrago (SSR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298493745137975336/ShinragowSSR.png?ex=6719c409&is=67187289&hm=8b6cfe16a4dd86fa83be595273c771e1d5fcbe6361e94d3a7c47995496455008&=&format=webp&quality=lossless'},
-        {'name': 'TommiJo (SSR)', 'image' : 'https://media.discordapp.net/attachments/1276598824579629089/1299999603835273286/tomjo_2022_ed_1.png?ex=6727d03a&is=67267eba&hm=f3486188c5aa01563ed572cb1970b5aa860b924bf5172c4882ac8c6ca414e422&=&format=webp&quality=lossless'},
-        {'name': 'FireKingStriker (SSR)', 'image' : 'https://media.discordapp.net/attachments/1298473140774637640/1301395009072791593/BlazeKingStriker_SSR_1.png?ex=67279dcc&is=67264c4c&hm=e59365c1c12380e90124da8665f69970ab4d3fd2bad9f4424a12f13eaa7a7e3a&=&format=webp&quality=lossless'}
+        {'name': 'Shinrago (SSR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298493745137975336/ShinragowSSR.png?ex=6719c409&is=67187289&hm=8b6cfe16a4dd86fa83be595273c771e1d5fcbe6361e94d3a7c47995496455008&=&format=webp&quality=lossless'}
     ],
     'Ultra Rare': [
         {'name': 'YachiTuan (UR)', 'image': 'https://media.discordapp.net/attachments/1276598824579629089/1299999236347269161/tuanchiru_2023_ed_1.png?ex=671fe6e2&is=671e9562&hm=32c079102aaf5979d2fb455186bf6f8e291eca711cc96f30f913dac6456a9d27&=&format=webp&quality=lossless'},
-        {'name': 'TomKuna (UR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298499485864824882/TomkunaUR.png?ex=6719c962&is=671877e2&hm=3ecfc0c9949027f2ad99d8d6360a86966cbf68046cb359326ef32c671eb291ff&=&format=webp&quality=lossless'},
-        {'name': 'ZombieCrusaders (UR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1301398793601945701/ZombieCrusaders_UR.png?ex=6727a153&is=67264fd3&hm=026125c85dd5d7da32a780465d6024a1611e753f066ad4e3b395daf501065625&=&format=webp&quality=lossless'}
+        {'name': 'TomKuna (UR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1298499485864824882/TomkunaUR.png?ex=6719c962&is=671877e2&hm=3ecfc0c9949027f2ad99d8d6360a86966cbf68046cb359326ef32c671eb291ff&=&format=webp&quality=lossless'}
     ],
     'Legendary Rare': [
         {'name': 'Diddy Force (LR)', 'image': 'https://media.discordapp.net/attachments/1298473140774637640/1299265626744950804/DiddyForceLR_2.png?ex=671c92e8&is=671b4168&hm=254223a79a0deabc518fde99f8c7314c098ac627f3c4bfcaf45ecdc3bd0e7bb7&=&format=webp&quality=lossless'},
