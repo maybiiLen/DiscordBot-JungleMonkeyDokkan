@@ -1,34 +1,4 @@
 {
-    "311280422153748480": {
-        "NPC3 (N)": 1,
-        "NPC2 (N)": 13,
-        "Edku (R)": 3,
-        "Rukironii (R)": 2,
-        "Shinrago (SSR)": 1,
-        "NPC (N)": 4,
-        "GrimDrago (SR)": 2,
-        "IchiLen (SR)": 1,
-        "Munozaki (R)": 2,
-        "Tasugaya (R)": 1,
-        "FireKingStriker (SSR)": 1,
-        "Branakuya (R)": 1
-    },
-    "287660426626465792": {
-        "Edku (R)": 1,
-        "Shinrago (SSR)": 1,
-        "NPC (N)": 12,
-        "NPC2 (N)": 8,
-        "Rukironii (R)": 2,
-        "GrimDrago (SR)": 2,
-        "TomKuna (UR)": 1,
-        "YachiTuan (UR)": 2,
-        "Munozaki (R)": 4,
-        "Branakuya (R)": 1,
-        "Tasugaya (R)": 3,
-        "NPC3 (N)": 3,
-        "ZombieCrusaders (UR)": 1,
-        "PinkMenace (R)": 1
-    },
     "369232294524878852": {
         "NPC (N)": 15,
         "Tasugaya (R)": 12,
@@ -42,13 +12,13 @@
         "IchiLen (SR)": 2,
         "Rukironii (R)": 2,
         "GrimDrago (SR)": 2,
-        "NPC3 (N)": 8,
+        "NPC3 (N)": 7,
         "PinkMenace (R)": 3,
         "TommiJo (SSR)": 1,
         "ZombieCrusaders (UR)": 1
     },
     "697353120455458846": {
-        "Branakuya (R)": 3,
+        "Branakuya (R)": 2,
         "Tasugaya (R)": 1,
         "Lentsu (SSR)": 2,
         "NPC2 (N)": 13,
@@ -64,6 +34,22 @@
         "TommiJo (SSR)": 1,
         "Celestial Spirits": 1,
         "Edku (R)": 1
+    },
+    "287660426626465792": {
+        "Shinrago (SSR)": 1,
+        "NPC (N)": 12,
+        "NPC2 (N)": 8,
+        "Rukironii (R)": 2,
+        "GrimDrago (SR)": 2,
+        "TomKuna (UR)": 1,
+        "YachiTuan (UR)": 2,
+        "Munozaki (R)": 4,
+        "Branakuya (R)": 1,
+        "Tasugaya (R)": 3,
+        "Edku (R)": 1,
+        "NPC3 (N)": 3,
+        "ZombieCrusaders (UR)": 1,
+        "PinkMenace (R)": 1
     },
     "747619574949871686": {
         "Edku (R)": 1,
@@ -95,7 +81,7 @@
         "Tomsuke (SR)": 2,
         "Lentsu (SSR)": 2,
         "GrimDrago (SR)": 1,
-        "NPC3 (N)": 5,
+        "NPC3 (N)": 4,
         "TommiJo (SSR)": 1,
         "Tojrago (SR)": 2
     },
@@ -106,7 +92,7 @@
         "Edku (R)": 3,
         "PyroStark (SR)": 2,
         "Tasugaya (R)": 4,
-        "Branakuya (R)": 3,
+        "Branakuya (R)": 2,
         "Tomsuke (SR)": 3,
         "Shinrago (SSR)": 2,
         "Rukironii (R)": 2,
@@ -115,6 +101,20 @@
         "Tojrago (SR)": 1,
         "IchiLen (SR)": 1,
         "Celestial Spirits": 1
+    },
+    "311280422153748480": {
+        "NPC2 (N)": 13,
+        "Edku (R)": 3,
+        "Rukironii (R)": 2,
+        "Shinrago (SSR)": 1,
+        "NPC (N)": 4,
+        "GrimDrago (SR)": 2,
+        "IchiLen (SR)": 1,
+        "Munozaki (R)": 2,
+        "Tasugaya (R)": 1,
+        "FireKingStriker (SSR)": 1,
+        "NPC3 (N)": 1,
+        "Branakuya (R)": 1
     },
     "385959162519224331": {
         "Edku (R)": 1,
